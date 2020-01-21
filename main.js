@@ -1,3 +1,26 @@
+function displayCarousel(responseJson) {
+  console.log(responseJson);
+  $('.my-slider').append(
+    `<div class="slider-item">
+        <div class="card">
+          <img src="${responseJson.drinks[0].strDrinkThumb}" alt="${responseJson.drinks[0].strDrink}" />
+          <h2>${responseJson.drinks[0].strDrink}</h2>
+          <p class="card_description">
+            Main ingredient: ${responseJson.drinks[0].strIngredient1}
+          </p>
+        </div>
+      </div>`
+  );
+}
+
+function loadCarousel() {
+  const url = 'https://www.thecocktaildb.com/api/json/v1/1/random.php';
+
+  fetch(url)
+    .then(response => response.json())
+    .then(responseJson => displayCarousel(responseJson));
+}
+
 const slider = tns({
   container: '.my-slider',
   loop: true,
@@ -34,7 +57,8 @@ function displayList(responseJson) {
     );
     while (responseJson.drinks[i].strIngredient[a] != null) {
       $('#list-ingredients').append(
-        `<li>${responseJson.drinks[i].strIngredients[a]}</li>`
+        `<h3>Ingredients:</h3>
+        <li>${responseJson.drinks[i].strIngredient[a]}</li>`
       );
       a++;
     }
@@ -70,3 +94,4 @@ function watchSearch() {
 }
 
 $(watchSearch);
+$(loadCarousel);
