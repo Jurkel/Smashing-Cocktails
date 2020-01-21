@@ -30,14 +30,20 @@
             class="search-txt"
             placeholder="Type to search"
           />
-          <a class="search-btn" href="#">
+          <a class="search-btn" value="">
             <i class="fas fa-search"></i>
           </a>
         </div>
+        <p class="error-message"></p>
       </nav>
+      <div class="search-results">
+        <h2>Search results:</h2>
+        <ul id="search-results"></ul>
+        <ul id="list-ingredients"></ul>
+      </div>
 
-      <h1>Popular Cocktails</h1>
       <div class="slider-container">
+        <h1>Popular Cocktails</h1>
         <ul
           class="controls"
           id="customize-controls"
@@ -121,7 +127,14 @@
         </p>
       </div>
 
-      <section class="liquor-grid"></section>
+      <div class="grid-container">
+        <div class="item-one"></div>
+        <div class="item-two"></div>
+        <div class="item-three"></div>
+        <div class="item-four"></div>
+        <div class="item-five"></div>
+        <div class="item-six"></div>
+      </div>
     </main>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
