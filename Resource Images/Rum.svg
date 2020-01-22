@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="176px" height="196px" viewBox="0 0 176 196" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 60 (88103) - https://sketch.com -->
+    <title>Rum</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="90.0277008%" y1="5.15213816%" x2="13.6384392%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#A1FFF1" offset="0%"></stop>
+            <stop stop-color="#054245" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Mobile" transform="translate(-823.000000, -25.000000)">
+            <g id="Rum" transform="translate(826.000000, 28.000000)">
+                <rect id="Rectangle-Copy-4" stroke="#858585" stroke-width="5" fill="url(#linearGradient-1)" x="0" y="0" width="170" height="190" rx="15"></rect>
+                <g id="rum" transform="translate(44.000000, 13.000000)" fill-rule="nonzero">
+                    <path d="M54.5849844,50.8757901 L55.0541205,16 L28.9450602,16 L29.4141963,50.8757901 C12.6479252,56.454488 0.892166355,72.8647282 2.08292943,91.6115676 L5.53667687,146 L78.4634471,146 L81.9171945,91.6115676 C83.1070143,72.8647282 71.3515699,56.454488 54.5849844,50.8757901 Z" id="Path" fill="#E6E6E6"></path>
+                    <path d="M53.5852431,50.8758749 L54.0543795,16 L41,16 L41,146 L77.4634034,146 L80.9171525,91.6114354 C82.1072873,72.8648664 70.351837,56.4545863 53.5852431,50.8758749 Z" id="Path" fill="#CCCCCC"></path>
+                    <path d="M5.98053234,72 C3.07609713,77.9872045 1.62623779,84.7912172 2.08279727,91.9382894 L5.53655025,146 L78.4634375,146 L81.9171905,91.9382894 C82.37375,84.7915313 80.9242051,77.9872045 78.0194554,72 L5.98053234,72 Z" id="Path" fill="#E47700"></path>
+                    <path d="M41,72 L41,146 L77.4634381,146 L80.9171905,91.9382894 C81.3737499,84.7915313 79.9242052,77.9872045 77.019456,72 L41,72 Z" id="Path" fill="#984D00"></path>
+                    <rect id="Rectangle" fill="#723802" x="26" y="0" width="32" height="20"></rect>
+                    <rect id="Rectangle" fill="#4D2602" x="41" y="0" width="16" height="20"></rect>
+                    <path d="M2.08286605,91.4548104 L3.98330904,121 L80.0167501,121 L81.9171931,91.4548104 C82.1027095,88.569872 81.9734769,85.7407851 81.5599953,83 L2.44006381,83 C2.02626782,85.7410972 1.89734961,88.569872 2.08286605,91.4548104 Z" id="Path" fill="#FBBF00"></path>
+                    <path d="M41,121 L79.0167331,121 L80.9171924,91.4548104 C81.1027104,88.569872 80.9734767,85.7407851 80.5599916,83 L41,83 L41,121 Z" id="Path" fill="#FFA900"></path>
+                    <rect id="Rectangle" fill="#723802" x="0" y="144" width="83" height="18"></rect>
+                    <rect id="Rectangle" fill="#4D2602" x="41" y="144" width="42" height="18"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

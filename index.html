@@ -8,12 +8,9 @@
       defer
       src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"
     ></script>
+
     <title>Cocktail Calories</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/tiny-slider.css"
-    />
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <main>
@@ -36,81 +33,14 @@
         </div>
         <p class="error-message"></p>
       </nav>
-      <div class="search-results">
-        <h2>Search results:</h2>
+
+      <div id="search-container">
         <ul id="search-results"></ul>
-        <ul id="list-ingredients"></ul>
       </div>
 
-      <div class="slider-container">
-        <h1>Popular Cocktails</h1>
-        <ul
-          class="controls"
-          id="customize-controls"
-          aria-label="Carousel Navigation"
-          tabindex="0"
-        >
-          <li
-            class="prev"
-            data-controls="prev"
-            aria-controls="customize"
-            tabindex="-1"
-          >
-            <i class="fas fa-angle-left fa-5x"></i>
-          </li>
-          <li
-            class="next"
-            data-controls="next"
-            aria-controls="customize"
-            tabindex="-1"
-          >
-            <i class="fas fa-angle-right fa-5x"></i>
-          </li>
-        </ul>
-        <div class="my-slider">
-          <!-- <div class="slider-item">
-            <div class="card">
-              <img src="https://placeimg.com/200/150/any" alt="" />
-              <h2>Title 1</h2>
-              <p class="card_description">
-                Loresm ipsum dolor sit amet consectetur adipisicing elit.
-                Dignissimos, voluptas!
-              </p>
-            </div>
-          </div>
-
-          <div class="slider-item">
-            <div class="card">
-              <img src="https://placeimg.com/200/150/nature" alt="" />
-              <h2>Title 2</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dignissimos, voluptas!
-              </p>
-            </div>
-          </div>
-
-          <div class="slider-item">
-            <div class="card">
-              <img src="https://placeimg.com/200/150/nature/2" alt="" />
-              <h2>Title 3</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dignissimos, voluptas!
-              </p>
-            </div>
-          </div>
-          <div class="slider-item">
-            <div class="card">
-              <img src="https://placeimg.com/200/150/nature/3" alt="" />
-              <h2>Title 4</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Dignissimos, voluptas!
-              </p>
-            </div>
-          </div> -->
-        </div>
+      <div class="pop-container">
+        <h2>Popular Cocktail List</h2>
+        <div class="list-group"></div>
       </div>
 
       <div class="banner-text">
@@ -120,20 +50,40 @@
           purus viverra accumsan in nisl nisi. Mi quis hendrerit dolor magna
           eget est lorem ipsum. Suspendisse sed nisi lacus sed viverra. Amet
           volutpat consequat mauris nunc congue. Commodo nulla facilisi nullam
-          vehicula. Purus gravida quis blandit turpis cursus in hac habitasse
-          platea. Risus pretium quam vulputate dignissim suspendisse in. Feugiat
-          pretium nibh ipsum consequat nisl vel pretium. Cras adipiscing enim eu
-          turpis egestas. Lectus magna fringilla urna porttitor rhoncus.
+          vehicula.
         </p>
       </div>
 
-      <div class="grid-container">
-        <div class="item-one"></div>
-        <div class="item-two"></div>
-        <div class="item-three"></div>
-        <div class="item-four"></div>
-        <div class="item-five"></div>
-        <div class="item-six"></div>
+      <div class="grid-wrapper">
+        <section class="alcohol-search"><h2>Search by Alcohol</h2></section>
+        <div class="grid-container">
+          <div class="item-one item">
+            <a href="#" class="liquor-choice"
+              ><img src="Resource Images/Gin.svg" alt="gin"
+            /></a>
+            <h3>GIN</h3>
+          </div>
+          <div class="item-two item">
+            <img src="Resource Images/Rum.svg" alt="rum" />
+            <h3>RUM</h3>
+          </div>
+          <div class="item-three item">
+            <img src="Resource Images/Tequila.svg" alt="tequila" />
+            <h3>TEQUILA</h3>
+          </div>
+          <div class="item-four item">
+            <img src="Resource Images/Vodka.svg" alt="vodka" />
+            <h3>VODKA</h3>
+          </div>
+          <div class="item-five item">
+            <img src="Resource Images/Whiskey.svg" alt="whiskey" />
+            <h3>WHISKEY</h3>
+          </div>
+          <div class="item-six item">
+            <img src="Resource Images/Liqueur.svg" alt="liqueur" />
+            <h3>LIQUEUR</h3>
+          </div>
+        </div>
       </div>
     </main>
     <script
@@ -141,7 +91,6 @@
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
       crossorigin="anonymous"
     ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
-    <script src="main.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>

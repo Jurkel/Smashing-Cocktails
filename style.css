@@ -70,94 +70,63 @@ nav {
   font-weight: bold;
 }
 
+.list-group-item {
+  border: 2px solid black;
+  font-size: 1em;
+  text-decoration: none;
+}
+
+.pop-container {
+  width: 60%;
+  height: 300px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.list-group {
+  display: flex;
+  flex-direction: column;
+}
+
 .banner-text {
-  width: 80%;
+  width: 100vw;
   height: 150px;
   background: darkgrey;
   color: white;
   padding: 25px;
   margin: 5% auto;
 }
-.slider-container {
-  max-width: 1000px;
-  padding: 2rem 3rem;
-  background: #e6e6e6;
-  margin: 2rem auto 0 auto;
-  overflow: hidden;
-  border-radius: 5px;
-  position: relative;
-}
 
-img {
-  display: inline-block;
-  vertical-align: top;
-  max-width: 100%;
-}
-
-.my-slider {
-  position: relative;
-}
-
-.slider-item {
-  background: grey;
-  border-right: 2px solid #333;
-  padding: 1.5rem 0.75rem;
-  position: relative;
-}
-
-.controls {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  position: absolute;
-  left: 0;
-  background: #333;
-  width: 100%;
-  top: 50%;
-  transform: translatey(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.card {
+.alcohol-search {
   text-align: center;
-  margin: 0 auto;
-  max-width: 200px;
-  color: #333;
-  background: white;
-  border-radius: 5px;
-  padding-bottom: 0.75rem;
-  font-family: sans-serif;
-  overflow: hidden;
-  box-shadow: 2px 2px rgba(black, 0.3);
-  position: relative;
 }
 
 .grid-container {
-  width: 80%;
-  height: 400px;
+  text-align: center;
+  width: 40%;
+  height: 200px;
   margin: 50px auto;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-gap: 3em;
+}
+
+.item {
+  background: transparent;
+  border: 2px solid black;
+  padding: 25px;
 }
 
 .item-one {
-  background: red;
 }
 .item-two {
-  background: blue;
 }
 .item-three {
-  background: green;
 }
 .item-four {
-  background: yellow;
 }
 .item-five {
-  background: purple;
 }
 .item-six {
-  background: orange;
 }
