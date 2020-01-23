@@ -70,12 +70,6 @@ nav {
   font-weight: bold;
 }
 
-.list-group-item {
-  border: 2px solid black;
-  font-size: 1em;
-  text-decoration: none;
-}
-
 .pop-container {
   width: 60%;
   height: 300px;
@@ -104,7 +98,7 @@ nav {
 .grid-container {
   text-align: center;
   width: 40%;
-  height: 200px;
+  height: 40%;
   margin: 50px auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -118,7 +112,12 @@ nav {
   padding: 25px;
 }
 
-.item-one {
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* .item-one {
 }
 .item-two {
 }
@@ -129,4 +128,4 @@ nav {
 .item-five {
 }
 .item-six {
-}
+} */
