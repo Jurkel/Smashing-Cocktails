@@ -21,27 +21,39 @@ function loadPopList() {
 
 function displayList(responseJson) {
   console.log(responseJson);
-  // $('#search-results').empty();
-  // $('.pop-container').hide();
-  // $('.banner-text').hide();
-  // $('.grid-wrapper').hide();
+  $('#search-results').empty();
+  $('.pop-container').hide();
+  $('.banner-text').hide();
+  $('.grid-wrapper').hide();
 
-  for (let i = 0; i < responseJson.drinks.length; i++) {
-    console.log('drinks[i] ' + responseJson.drinks[i]);
-    console.log('strDrinkThumb' + responseJson.drinks[i].strDrinkThumb);
-    console.log('strDrink' + responseJson.drinks[i].strDrink);
+  let a = 1;
+  for (let i = 0; i < 1; i++) {
+    console.log(i);
+    // $('#search-container').append(`<p>Hello</p>`);
     $('#search-container').append(
-      `<img src="${responseJson.drinks[i].strDrinkThumb}" alt="${responseJson.drinks[i].strDrink}/>
-      <h3>${responseJson.drinks[i].strDrink}</h3>`
+      `<img src="${responseJson.drinks[i].strDrinkThumb}" alt="${responseJson.drinks[i].strDrink}" />`
     );
-    // while (responseJson.drinks[i].strIngredient[a] != null) {
-    //   $('#list-ingredients').append(
-    //     `<h3>Ingredients:</h3>
-    //     <li>${responseJson.drinks[i].strIngredient[a]}</li>`
-    //   );
-    //   a++;
-    // }
+    let ingredient = 'strIngredient' + a;
+    // console.log(ingredient);
+    // console.log(responseJson.drinks[i]['strIngredient1']);
+    let response = responseJson.drinks[i][ingredient];
+    // console.log(response);
+    while (response != null) {
+      // console.log('hey ', responseJson.drinks[i].strIngredient[a]);
+      // $('#list-ingredients').append(
+      //   `<h3>Ingredients:</h3>
+      // <li>${responseJson.drinks[i].strIngredient[a]}</li>`
+      // );
+      ingredient = 'strIngredient' + a;
+      response = responseJson.drinks[i][ingredient];
+      console.log(response);
+      a++;
+    }
   }
+
+  //   a++;
+  // }
+  // }
 }
 
 function displayLiquorList(responseJson) {
