@@ -19,51 +19,37 @@ function loadPopList() {
     .then(responseJson => displayPopList(responseJson));
 }
 
-function displayList(responseJson) {
-  console.log(responseJson);
+function clear() {
   $('#search-results').empty();
   $('.pop-container').hide();
   $('.banner-text').hide();
   $('.grid-wrapper').hide();
+}
+
+function displayList(responseJson) {
+  console.log(responseJson);
+  clear();
 
   let a = 1;
-  for (let i = 0; i < 1; i++) {
-    console.log(i);
-    // $('#search-container').append(`<p>Hello</p>`);
+
+  for (let i = 0; i < responseJson.drinks.length; i++) {
     $('#search-container').append(
-      `<img src="${responseJson.drinks[i].strDrinkThumb}" alt="${responseJson.drinks[i].strDrink}" />`
+      `<img class="display-img" src="${responseJson.drinks[i].strDrinkThumb}" alt="${responseJson.drinks[i].strDrink}" />
+      <h3>${responseJson.drinks[i].strDrink}</h3>
+      <ul class="ing-list">Main ingredients</ul>`
     );
+
     let ingredient = 'strIngredient' + a;
-    // console.log(ingredient);
-    // console.log(responseJson.drinks[i]['strIngredient1']);
     let response = responseJson.drinks[i][ingredient];
-    // console.log(response);
+
     while (response != null) {
-      // console.log('hey ', responseJson.drinks[i].strIngredient[a]);
-      // $('#list-ingredients').append(
-      //   `<h3>Ingredients:</h3>
-      // <li>${responseJson.drinks[i].strIngredient[a]}</li>`
-      // );
       ingredient = 'strIngredient' + a;
       response = responseJson.drinks[i][ingredient];
+      $('.ing-list').append(`<li>${response}</li>`);
+
       console.log(response);
       a++;
     }
-  }
-
-  //   a++;
-  // }
-  // }
-}
-
-function displayLiquorList(responseJson) {
-  console.log(responseJson);
-
-  for (let i = 0; i < responseJson.drinks.length; i++) {
-    $('#recipe-list').append(
-      `<li><img src="${responseJson.drinks[i].strDrinkThumb}" alt="${responseJson.drinks[i].strDrink}" class="recipe-list-img">
-      <h3>${responseJson.drinks[i].strDrink}</h3></li>`
-    );
   }
 }
 
@@ -86,17 +72,6 @@ function searchRecipe(cocktail) {
     });
 }
 
-function pullList(liquor) {
-  const url =
-    'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + liquor;
-
-  console.log(url);
-
-  fetch(url)
-    .then(response => response.json())
-    .then(responseJson => displayLiquorList(responseJson));
-}
-
 function watchSearch() {
   $('.search-results').empty();
   $('.search-btn').click(event => {
@@ -109,14 +84,5 @@ function watchSearch() {
   });
 }
 
-function watchGin() {
-  $('.gin').click(event => {
-    const liquor = 'Gin';
-
-    pullList(liquor);
-  });
-}
-
 $(watchSearch);
 $(loadPopList);
-$(watchGin);

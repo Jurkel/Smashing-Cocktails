@@ -70,6 +70,10 @@ nav {
   font-weight: bold;
 }
 
+#search-container {
+  display: flex;
+}
+
 .pop-container {
   width: 60%;
   height: 300px;
@@ -117,6 +121,17 @@ ul {
   margin: 0;
 }
 
+.recipe-list-img {
+  height: 50px;
+  width: 50px;
+}
+
+.liquor-li {
+  display: flex;
+  border: 2px solid black;
+  width: 400px;
+  margin: 10px;
+}
 /* .item-one {
 }
 .item-two {

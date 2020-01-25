@@ -18,8 +18,9 @@
         <ul class="nav-menu">
           <li>Home</li>
           <li>About</li>
-          <li>List</li>
+          <a href="list.html"><li>List</li></a>
         </ul>
+
         <div class="search-box">
           <input
             type="text"
@@ -31,11 +32,14 @@
             <i class="fas fa-search"></i>
           </a>
         </div>
+
         <p class="error-message"></p>
       </nav>
 
       <div id="search-container">
-        <ul id="search-results"></ul>
+        <ul id="liquor-list"></ul>
+        <ul id="main-measurements"></ul>
+        <ul id="main-ingredients"></ul>
       </div>
 
       <div class="pop-container">
@@ -58,37 +62,37 @@
         <section class="alcohol-search"><h2>Search by Alcohol</h2></section>
         <div class="grid-container">
           <div class="item-one item">
-            <a href="list.html" class="gin"
+            <a href="#" class="gin"
               ><img src="Resource Images/Gin.svg" alt="gin"
             /></a>
             <h3>GIN</h3>
           </div>
           <div class="item-two item">
-            <a href="list.html" class="rum"
+            <a href="./list.html" class="rum"
               ><img src="Resource Images/Rum.svg" alt="rum"
             /></a>
             <h3>RUM</h3>
           </div>
           <div class="item-three item">
-            <a href="list.html" class="tequila"
+            <a href="./list.html" class="tequila"
               ><img src="Resource Images/Tequila.svg" alt="tequila"
             /></a>
             <h3>TEQUILA</h3>
           </div>
           <div class="item-four item">
-            <a href="list.html" class="vodka"
+            <a href="./list.html" class="vodka"
               ><img src="Resource Images/Vodka.svg" alt="vodka"
             /></a>
             <h3>VODKA</h3>
           </div>
           <div class="item-five item">
-            <a href="list.html" class="whiskey"
+            <a href="./list.html" class="whiskey"
               ><img src="Resource Images/Whiskey.svg" alt="whiskey"
             /></a>
             <h3>WHISKEY</h3>
           </div>
           <div class="item-six item">
-            <a href="list.html" class="liqueur"
+            <a href="./list.html" class="liqueur"
               ><img src="Resource Images/Liqueur.svg" alt="liqueur"
             /></a>
             <h3>LIQUEUR</h3>
@@ -102,5 +106,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./main.js"></script>
+    <script src="./liquor.js"></script>
   </body>
 </html>
