@@ -33,11 +33,14 @@ function displayLiquorList(responseJson) {
 
 function findClass(id) {
   console.log(id);
-  let x = '.' + id;
-  $('x').attr('title', 'active');
+  // let x = 'class' + id;
+
   // $('#liquor-list').on('click', 'a', event => {
-  //   $('a').attr('title', 'active');
+  //   $(x).attr('title', 'active');
   // });
+  $('#liquor-list').on('click', 'a', event => {
+    $('a').attr('title', 'active');
+  });
 }
 
 function fetchRecipe(url) {
