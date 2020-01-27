@@ -41,34 +41,9 @@ function clear() {
   $('#liquor-list').empty();
 }
 
-// function displayList(responseJson) {
-//   console.log(responseJson);
-//   clear();
-
-//   let a = 1;
-
-//   for (let i = 0; i < responseJson.drinks.length; i++) {
-//     $('#search-container').append(
-//       `<img class="display-img" src="${responseJson.drinks[i].strDrinkThumb}" alt="${responseJson.drinks[i].strDrink}" />
-//       <h3>${responseJson.drinks[i].strDrink}</h3>
-//       <ul class="ing-list">Main ingredients</ul>`
-//     );
-
-//     let ingredient = 'strIngredient' + a;
-//     let response = responseJson.drinks[i][ingredient];
-
-//     while (response != null) {
-//       $('.ing-list').append(`<li>${response}</li>`);
-//       ingredient = 'strIngredient' + a;
-//       response = responseJson.drinks[i][ingredient];
-//       console.log(response);
-//       a++;
-//     }
-//   }
-// }
-
 function displayLiquorList(responseJson) {
   console.log(responseJson);
+  clear();
 
   for (let i = 0; i < responseJson.drinks.length; i++) {
     let id = responseJson.drinks[i].idDrink;
