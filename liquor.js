@@ -6,17 +6,45 @@ function displayRecipe(responseJson) {
   alt="${responseJson.drinks[0].strDrink}" />
   <p>${responseJson.drinks[0].strDrink}</p>`);
 
+  displayIngredients(responseJson);
+  displayMeasurements(responseJson);
+}
+
+function displayMeasurements(responseJson) {
+  let a = 1;
+  let measurement = 'strMeasure' + a;
+  let response = responseJson.drinks[0][measurement];
+
+  while (response != null) {
+    $('#main-measurements').append(`<li>${response}</li>`);
+    console.log(response);
+    measurement = 'strMeasure' + a;
+    response = responseJson.drinks[0][measurement];
+    a++;
+  }
+}
+
+function displayIngredients(responseJson) {
   let a = 1;
   let ingredient = 'strIngredient' + a;
   let response = responseJson.drinks[0][ingredient];
 
   while (response != null) {
     $('#main-ingredients').append(`<li>${response}</li>`);
+    console.log(response);
     ingredient = 'strIngredient' + a;
     response = responseJson.drinks[0][ingredient];
-    console.log(response);
     a++;
   }
+}
+
+function findClass() {
+  $(document).on('click', '.drink-item', function() {
+    let current = $(this).data('drink-id');
+    console.log('current >> ' + current);
+    let url = fetchUrl(current);
+    fetchRecipe(url);
+  });
 }
 
 function fetchUrl(id) {
@@ -30,37 +58,6 @@ function fetchRecipe(url) {
   fetch(url)
     .then(response => response.json())
     .then(responseJson => displayRecipe(responseJson));
-}
-
-function displayLiquorList(responseJson) {
-  const idStore = [];
-  console.log(responseJson);
-
-  for (let i = 0; i < responseJson.drinks.length; i++) {
-    let id = responseJson.drinks[i].idDrink;
-    // let url = fetchUrl(id);
-
-    $('#liquor-list').append(
-      `<a href="#" class="drink-item" data-drink-id="${id}">
-      <li class="liquor-li">
-      <img src="${responseJson.drinks[i].strDrinkThumb}" 
-      alt="${responseJson.drinks[i].strDrink}" 
-      class="recipe-list-img" />
-      <h3>${responseJson.drinks[i].strDrink}</h3></li></a>`
-    );
-    idStore.push(id);
-  }
-  console.log(idStore);
-  findClass();
-}
-
-function findClass() {
-  $(document).on('click', '.drink-item', function() {
-    let current = $(this).data('drink-id');
-    console.log('current two >> ' + current);
-    let url = fetchUrl(current);
-    fetchRecipe(url);
-  });
 }
 
 function pullList(liquor) {
@@ -81,6 +78,44 @@ function watchGin() {
   });
 }
 
-function displaySearchRecipe(id) {}
+function watchRum() {
+  const liquor = 'Rum';
+  $('.item-two').click(event => {
+    pullList(liquor);
+  });
+}
+function watchTequila() {
+  const liquor = 'Tequila';
+  $('.item-three').click(event => {
+    pullList(liquor);
+  });
+}
+function watchVodka() {
+  const liquor = 'Vodka';
+  $('.item-four').click(event => {
+    pullList(liquor);
+  });
+}
+function watchBourbon() {
+  const liquor = 'Bourbon';
+  $('.item-five').click(event => {
+    pullList(liquor);
+  });
+}
+function watchBrandy() {
+  const liquor = 'Brandy';
+  $('.item-six').click(event => {
+    pullList(liquor);
+  });
+}
 
-$(watchGin);
+function watchLiquor() {
+  $(watchGin);
+  $(watchRum);
+  $(watchTequila);
+  $(watchVodka);
+  $(watchBourbon);
+  $(watchBrandy);
+}
+
+$(watchLiquor);
