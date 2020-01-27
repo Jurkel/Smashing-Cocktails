@@ -1,29 +1,36 @@
-// function displayRecipe(responseJson) {
-//   $('#search-container').empty();
-//   $('#search-container').append(`
-//   <p> ${responseJson.drinks[0].strDrink}</p>`);
-// }
+function displayRecipe(responseJson) {
+  clear();
+  $('#search-container').append(`
+  <div class="recipe-container">
+  <img class="recipe-img" src="${responseJson.drinks[0].strDrinkThumb}" 
+  alt="${responseJson.drinks[0].strDrink}" />
+  <p>${responseJson.drinks[0].strDrink}</p>`);
 
-// function fetchUrl(id) {
-//   const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + id;
-//   console.log('url ' + url);
-//   return url;
-// }
+  let a = 1;
+  let ingredient = 'strIngredient' + a;
+  let response = responseJson.drinks[0][ingredient];
 
-// function fetchRecipe(url) {
-//   console.log('fetch recipe ' + url);
-//   fetch(url)
-//     .then(response => response.json())
-//     .then(responseJson => displayRecipe(responseJson));
-// }
+  while (response != null) {
+    $('#main-ingredients').append(`<li>${response}</li>`);
+    ingredient = 'strIngredient' + a;
+    response = responseJson.drinks[0][ingredient];
+    console.log(response);
+    a++;
+  }
+}
 
-// function findId(id, url) {
-//   let classId = '.' + id;
-//   console.log('class id ' + classId);
-//   let classIdElement = document.getElementsByClassName(id);
-//   console.log('classIdElement ' + classIdElement);
-//   classIdElement[0].click(fetchRecipe(url));
-// }
+function fetchUrl(id) {
+  const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + id;
+  console.log('url ' + url);
+  return url;
+}
+
+function fetchRecipe(url) {
+  console.log('fetch recipe ' + url);
+  fetch(url)
+    .then(response => response.json())
+    .then(responseJson => displayRecipe(responseJson));
+}
 
 function displayLiquorList(responseJson) {
   const idStore = [];
@@ -34,7 +41,7 @@ function displayLiquorList(responseJson) {
     // let url = fetchUrl(id);
 
     $('#liquor-list').append(
-      `<a href="#" class="drink-item" drinkID="${id}">
+      `<a href="#" class="drink-item" data-drink-id="${id}">
       <li class="liquor-li">
       <img src="${responseJson.drinks[i].strDrinkThumb}" 
       alt="${responseJson.drinks[i].strDrink}" 
@@ -44,15 +51,15 @@ function displayLiquorList(responseJson) {
     idStore.push(id);
   }
   console.log(idStore);
+  findClass();
 }
 
 function findClass() {
-  $('ul').click('.drink-item', event => {
-    let current = $(event.currentTarget);
-    let currentTwo = $(event.target);
-    event.preventDefault();
-    console.log(current);
-    console.log(currentTwo);
+  $(document).on('click', '.drink-item', function() {
+    let current = $(this).data('drink-id');
+    console.log('current two >> ' + current);
+    let url = fetchUrl(current);
+    fetchRecipe(url);
   });
 }
 

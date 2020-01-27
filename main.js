@@ -24,6 +24,7 @@ function clear() {
   $('.pop-container').hide();
   $('.banner-text').hide();
   $('.grid-wrapper').hide();
+  $('#liquor-list').empty();
 }
 
 function displayList(responseJson) {
@@ -43,10 +44,9 @@ function displayList(responseJson) {
     let response = responseJson.drinks[i][ingredient];
 
     while (response != null) {
+      $('.ing-list').append(`<li>${response}</li>`);
       ingredient = 'strIngredient' + a;
       response = responseJson.drinks[i][ingredient];
-      $('.ing-list').append(`<li>${response}</li>`);
-
       console.log(response);
       a++;
     }
