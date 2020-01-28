@@ -51,6 +51,7 @@ function clear() {
 function displayLiquorList(responseJson) {
   console.log(responseJson);
   clear();
+  $('#search-container').hide();
 
   for (let i = 0; i < responseJson.drinks.length; i++) {
     let id = responseJson.drinks[i].idDrink;
