@@ -7,8 +7,9 @@ function displayPopList(responseJson) {
       <li><a href="#" class="pop-item" data-drink-id="${responseJson.drinks[i].idDrink}">
       <img src="${responseJson.drinks[i].strDrinkThumb}" 
       alt="${responseJson.drinks[i].strDrink}" 
-      class="recipe-list-img" />
-      <p>${responseJson.drinks[i].strDrink}</p></a></li>
+      class="pop-list-img" />
+      <div class="p-container">
+      <p>${responseJson.drinks[i].strDrink}</p></div></a></li>
       </div>`
     );
   }

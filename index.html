@@ -10,13 +10,19 @@
     ></script>
 
     <title>Smashing Cocktails</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto|Yeseva+One&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <main>
       <nav>
         <ul class="nav-menu">
-          <a href="./index.html"><li>Home</li></a>
+          <a href="./index.html"
+            ><img class="logo-img" src="./Resource Images/Logo.svg" alt="logo"
+          /></a>
         </ul>
 
         <div class="search-box">
@@ -42,11 +48,16 @@
         <div class="ingredient-container">
           <ul id="main-ingredients"></ul>
         </div>
+        <div class="directions-container">
+          <p id="directions"></p>
+        </div>
       </div>
 
       <div class="pop-container">
         <h2>Popular Cocktail List</h2>
-        <ul class="list-group"></ul>
+        <div class="list-group-container">
+          <ul class="list-group"></ul>
+        </div>
       </div>
 
       <div class="banner-text">
@@ -59,46 +70,43 @@
           vehicula.
         </p>
       </div>
-
-      <div class="grid-wrapper">
-        <section class="alcohol-search"><h2>Search by Alcohol</h2></section>
-        <div class="grid-container">
-          <div class="item-one item">
-            <a href="#" class="gin"
-              ><img src="Resource Images/Gin.svg" alt="gin"
-            /></a>
-            <h3>GIN</h3>
-          </div>
-          <div class="item-two item">
-            <a href="#" class="rum"
-              ><img src="Resource Images/Rum.svg" alt="rum"
-            /></a>
-            <h3>RUM</h3>
-          </div>
-          <div class="item-three item">
-            <a href="#" class="tequila"
-              ><img src="Resource Images/Tequila.svg" alt="tequila"
-            /></a>
-            <h3>TEQUILA</h3>
-          </div>
-          <div class="item-four item">
-            <a href="#" class="vodka"
-              ><img src="Resource Images/Vodka.svg" alt="vodka"
-            /></a>
-            <h3>VODKA</h3>
-          </div>
-          <div class="item-five item">
-            <a href="#" class="whiskey"
-              ><img src="Resource Images/Whiskey.svg" alt="whiskey"
-            /></a>
-            <h3>WHISKEY</h3>
-          </div>
-          <div class="item-six item">
-            <a href="#" class="brandy"
-              ><img src="Resource Images/Liqueur.svg" alt="brandy"
-            /></a>
-            <h3>LIQUEUR</h3>
-          </div>
+      <section class="alcohol-search"><h2>Search by Alcohol</h2></section>
+      <div class="grid-container">
+        <div class="item-one item">
+          <a href="#" class="gin"
+            ><img src="Resource Images/Gin.svg" alt="gin"
+          /></a>
+          <h3>GIN</h3>
+        </div>
+        <div class="item-two item">
+          <a href="#" class="rum"
+            ><img src="Resource Images/Rum.svg" alt="rum"
+          /></a>
+          <h3>RUM</h3>
+        </div>
+        <div class="item-three item">
+          <a href="#" class="tequila"
+            ><img src="Resource Images/Tequila.svg" alt="tequila"
+          /></a>
+          <h3>TEQUILA</h3>
+        </div>
+        <div class="item-four item">
+          <a href="#" class="vodka"
+            ><img src="Resource Images/Vodka.svg" alt="vodka"
+          /></a>
+          <h3>VODKA</h3>
+        </div>
+        <div class="item-five item">
+          <a href="#" class="bourbon"
+            ><img src="Resource Images/Bourbon.svg" alt="bourbon"
+          /></a>
+          <h3>BOURBON</h3>
+        </div>
+        <div class="item-six item">
+          <a href="#" class="brandy"
+            ><img src="Resource Images/Brandy.svg" alt="brandy"
+          /></a>
+          <h3>BRANDY</h3>
         </div>
       </div>
     </main>

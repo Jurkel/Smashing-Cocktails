@@ -4,7 +4,7 @@
 }
 
 body {
-  background: #6d7070;
+  background: #5e73ae;
 }
 
 nav {
@@ -17,8 +17,11 @@ nav {
   display: flex;
 }
 
+.logo-img {
+  margin: 15px;
+}
 .search-box {
-  right: 2%;
+  right: 5%;
   top: 1%;
   border: 2px solid white;
   color: white;
@@ -71,49 +74,115 @@ nav {
 }
 
 #search-container {
-  display: flex;
-}
-
-.pop-container {
-  width: 60%;
-  height: 300px;
+  max-width: 600px;
   margin-right: auto;
   margin-left: auto;
 }
 
-.list-group {
+.pop-container {
   display: flex;
   flex-direction: column;
+  background: #5e73ae;
+  width: 400px;
+  margin-top: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  border-radius: 17px;
+  box-shadow: -4px -4px 6px rgba(127, 150, 215, 0.34),
+    4px 4px 6px rgba(46, 62, 106, 0.25);
+}
+
+.pop-container > h2 {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Yeseva One', Arial, Helvetica, sans-serif;
+  color: #dbe0ee;
+  padding: 10px;
+}
+
+.pop-list-container {
+  padding: 5px;
+  justify-content: left;
+  margin: 10px;
+  border-radius: 5px;
+}
+
+.pop-list-container > li {
+  list-style: none;
+  text-decoration: none;
+  flex-direction: row;
+}
+
+.pop-list-container:hover {
+  box-shadow: -4px -4px 6px rgba(127, 150, 215, 0.34),
+    4px 4px 6px rgba(46, 62, 106, 0.25);
+}
+
+.pop-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+.p-container {
+  border-radius: 15px;
+}
+.p-container > p {
+  padding-top: 23px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 1.2em;
+  text-transform: capitalize;
+  color: #dbe0ee;
+}
+
+.pop-list-img {
+  justify-items: right;
+  height: 75px;
+  width: 75px;
+}
+
+a:link {
+  text-decoration: none;
 }
 
 .banner-text {
-  width: 100vw;
-  height: 150px;
-  background: darkgrey;
-  color: white;
+  max-width: 100vw;
+  height: 100px;
+  background: #bec5d8;
+  color: navy;
   padding: 25px;
   margin: 5% auto;
 }
 
+.banner-text > p {
+  font-size: 0.8em;
+  max-width: 800px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .alcohol-search {
   text-align: center;
+  margin: 30px;
 }
 
 .grid-container {
   text-align: center;
-  width: 40%;
-  height: 40%;
-  margin: 50px auto;
+  left: 0;
+  max-width: 470px;
+  margin-right: auto;
+  margin-left: auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  grid-gap: 3em;
+  grid-gap: 1em;
 }
 
 .item {
   background: transparent;
-  border: 2px solid black;
-  padding: 25px;
+  padding: 10px;
+  border-radius: 15px;
+  box-shadow: -4px -4px 6px rgba(127, 150, 215, 0.34),
+    4px 4px 6px rgba(46, 62, 106, 0.25);
 }
 
 ul {
@@ -126,11 +195,40 @@ ul {
   width: 50px;
 }
 
+#liquor-list {
+  margin-right: auto;
+  margin-left: auto;
+}
+.recipe-container {
+  height: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.recipe-img {
+  height: 120px;
+  width: 120px;
+}
 .liquor-li {
   display: flex;
-  border: 2px solid black;
+  border-radius: 15px;
+  box-shadow: -4px -4px 6px rgba(127, 150, 215, 0.34),
+    4px 4px 6px rgba(46, 62, 106, 0.25);
   width: 400px;
   margin: 10px;
+  padding: 5px;
+}
+
+.liquor-li > h3 {
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 1.3em;
+  color: #dbe0ee;
+  padding-left: 15px;
+}
+
+h2 {
+  color: #dbe0ee;
+  text-transform: uppercase;
 }
 /* .item-one {
 }

@@ -2,12 +2,18 @@ function displayRecipe(responseJson) {
   clear();
   $('#search-container').append(`
   <div class="recipe-container">
+  <div class="img-div">
   <img class="recipe-img" src="${responseJson.drinks[0].strDrinkThumb}" 
-  alt="${responseJson.drinks[0].strDrink}" />
-  <p>${responseJson.drinks[0].strDrink}</p>`);
+  alt="${responseJson.drinks[0].strDrink}" /></div>
+  <div class="recipe-title"><p>${responseJson.drinks[0].strDrink}</p></div>`);
 
   displayIngredients(responseJson);
   displayMeasurements(responseJson);
+  displayDirections(responseJson);
+}
+
+function displayDirections(responseJson) {
+  $('#directions').append(`${responseJson.drinks[0].strInstructions}`);
 }
 
 function displayMeasurements(responseJson) {
@@ -16,8 +22,9 @@ function displayMeasurements(responseJson) {
   let response = responseJson.drinks[0][measurement];
 
   while (response != null) {
-    $('#main-measurements').append(`<li>${response}</li>`);
     console.log(response);
+    $('#main-measurements').append(`<li>${response}</li>`);
+
     measurement = 'strMeasure' + a;
     response = responseJson.drinks[0][measurement];
     a++;
