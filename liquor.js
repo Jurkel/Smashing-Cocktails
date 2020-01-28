@@ -1,7 +1,7 @@
 function displayRecipe(responseJson) {
   clear();
-  $('#search-container').append(`
-  <div class="recipe-container">
+  $('#search-container').show();
+  $('#search-container').prepend(`
   <div class="img-div">
   <img class="recipe-img" src="${responseJson.drinks[0].strDrinkThumb}" 
   alt="${responseJson.drinks[0].strDrink}" /></div>

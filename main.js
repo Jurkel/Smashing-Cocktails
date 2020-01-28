@@ -1,5 +1,6 @@
 function displayPopList(responseJson) {
   console.log(responseJson);
+  $('#search-container').hide();
 
   for (let i = 0; i < responseJson.drinks.length; i++) {
     $('.list-group').append(
@@ -40,6 +41,11 @@ function clear() {
   $('.banner-text').hide();
   $('.grid-wrapper').hide();
   $('#liquor-list').empty();
+  $('#main-ingredients').empty();
+  $('#main-measurements').empty();
+  $('.recipe-title').empty();
+  $('#directions').empty();
+  $('.img-div').empty();
 }
 
 function displayLiquorList(responseJson) {
