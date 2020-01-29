@@ -73,6 +73,9 @@ nav {
   font-weight: bold;
 }
 
+.error-message {
+  float: right;
+}
 .pop-container {
   display: flex;
   flex-direction: column;
@@ -86,6 +89,14 @@ nav {
     4px 4px 6px rgba(46, 62, 106, 0.25);
 }
 
+.logo-text > h3 {
+  font-size: 1.3em;
+  font-family: 'Yeseva One', Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  color: #dbe0ee;
+  margin-top: 21px;
+  line-height: 5px;
+}
 .pop-container > h2 {
   text-align: center;
   text-transform: uppercase;
@@ -143,15 +154,17 @@ a:link {
   height: 100px;
   background: #bec5d8;
   color: navy;
-  padding: 25px;
   margin: 5% auto;
+  font-family: 'Yeseva One', Arial, Helvetica, sans-serif;
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  padding: 15px;
 }
 
 .banner-text > p {
-  font-size: 0.8em;
+  font-size: 1.5em;
   max-width: 800px;
-  margin-right: auto;
-  margin-left: auto;
 }
 
 .alcohol-search {
