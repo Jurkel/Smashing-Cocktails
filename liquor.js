@@ -24,7 +24,6 @@ function displayMeasurements(responseJson) {
   while (response != null) {
     console.log(response);
     $('#main-measurements').append(`<li>${response}</li>`);
-
     measurement = 'strMeasure' + a;
     response = responseJson.drinks[0][measurement];
     a++;
