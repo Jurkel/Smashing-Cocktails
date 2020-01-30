@@ -78,51 +78,12 @@ function pullList(liquor) {
     .then(responseJson => displayLiquorList(responseJson));
 }
 
-function watchGin() {
-  const liquor = 'Gin';
-  $('.item-one').click(event => {
-    pullList(liquor);
-  });
-}
-
-function watchRum() {
-  const liquor = 'Rum';
-  $('.item-two').click(event => {
-    pullList(liquor);
-  });
-}
-function watchTequila() {
-  const liquor = 'Tequila';
-  $('.item-three').click(event => {
-    pullList(liquor);
-  });
-}
-function watchVodka() {
-  const liquor = 'Vodka';
-  $('.item-four').click(event => {
-    pullList(liquor);
-  });
-}
-function watchBourbon() {
-  const liquor = 'Bourbon';
-  $('.item-five').click(event => {
-    pullList(liquor);
-  });
-}
-function watchBrandy() {
-  const liquor = 'Brandy';
-  $('.item-six').click(event => {
-    pullList(liquor);
-  });
-}
-
 function watchLiquor() {
-  $(watchGin);
-  $(watchRum);
-  $(watchTequila);
-  $(watchVodka);
-  $(watchBourbon);
-  $(watchBrandy);
+  $(document).on('click', '.liquor-choice', function() {
+    let current = $(this).data('liquor');
+    console.log('current >> ' + current);
+    pullList(current);
+  });
 }
 
 $(watchLiquor);
