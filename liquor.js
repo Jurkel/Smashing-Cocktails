@@ -1,3 +1,4 @@
+// displays recipe to the DOM from JSON
 function displayRecipe(responseJson) {
   clear();
   $('#search-container').show();
@@ -12,10 +13,12 @@ function displayRecipe(responseJson) {
   displayDirections(responseJson);
 }
 
+// displays instructions on how to make drink
 function displayDirections(responseJson) {
   $('#directions').append(`${responseJson.drinks[0].strInstructions}`);
 }
 
+// displays measurements for recipe
 function displayMeasurements(responseJson) {
   let a = 1;
   let measurement = 'strMeasure' + a;
@@ -30,6 +33,7 @@ function displayMeasurements(responseJson) {
   }
 }
 
+// displays ingredient list for recipe
 function displayIngredients(responseJson) {
   let a = 1;
   let ingredient = 'strIngredient' + a;
@@ -44,6 +48,7 @@ function displayIngredients(responseJson) {
   }
 }
 
+// finds the drinkID number stored in attributes
 function findClass() {
   $(document).on('click', '.drink-item', function() {
     let current = $(this).data('drink-id');
@@ -53,12 +58,14 @@ function findClass() {
   });
 }
 
+// compiles the endpoint for calling the API by drink ID
 function fetchUrl(id) {
   const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + id;
   console.log('url ' + url);
   return url;
 }
 
+// calls API to search recipe by drink ID
 function fetchRecipe(url) {
   console.log('fetch recipe ' + url);
   fetch(url)
@@ -66,6 +73,7 @@ function fetchRecipe(url) {
     .then(responseJson => displayRecipe(responseJson));
 }
 
+// compiles endpoint and calls API to search for list filtered by alcohol
 function pullList(liquor) {
   const url =
     'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + liquor;
@@ -77,6 +85,7 @@ function pullList(liquor) {
     .then(responseJson => displayLiquorList(responseJson));
 }
 
+// watching for which liquor category to be clicked
 function watchLiquor() {
   $(document).on('click', '.liquor-choice', function() {
     let current = $(this).data('liquor');

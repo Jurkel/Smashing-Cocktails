@@ -1,3 +1,4 @@
+// displays list of popular cocktails
 function displayPopList(responseJson) {
   console.log(responseJson);
   $('#search-container').hide();
@@ -17,6 +18,7 @@ function displayPopList(responseJson) {
   findPopClass();
 }
 
+// pulls drinkID from targeted drink from popular list
 function findPopClass() {
   $(document).on('click', '.pop-item', function() {
     let current = $(this).data('drink-id');
@@ -26,6 +28,7 @@ function findPopClass() {
   });
 }
 
+// calls API for popular list of cocktails
 function loadPopList() {
   const url =
     'https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php';
@@ -35,6 +38,7 @@ function loadPopList() {
     .then(responseJson => displayPopList(responseJson));
 }
 
+// clears DOM of search results
 function clear() {
   $('#search-results').empty();
   $('.pop-container').hide();
@@ -48,6 +52,7 @@ function clear() {
   $('.img-div').empty();
 }
 
+// displays list filtered by alcohol
 function displayLiquorList(responseJson) {
   console.log(responseJson);
   clear();
@@ -69,6 +74,7 @@ function displayLiquorList(responseJson) {
   findClass();
 }
 
+// calls API to search for recipe by cocktail name
 function searchRecipe(cocktail) {
   const url =
     'https://www.thecocktaildb.com/api/json/v1/1/search.php?s=' + cocktail;
@@ -88,6 +94,7 @@ function searchRecipe(cocktail) {
     });
 }
 
+// waiting for search event
 function watchSearch() {
   $('.search-results').empty();
   $('.search-btn').click(event => {
