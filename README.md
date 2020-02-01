@@ -1,5 +1,8 @@
 # Smashing-Cocktails
 
+https://jurkel.github.io/Smashing-Cocktails/
+
+
 Uses four different API calls to retrieve a popular list of ten cocktails, a search for cocktails by name, filter cocktails by 
 spirit, and then finally a search for cocktails by their id number. 
 
