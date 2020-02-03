@@ -1,8 +1,7 @@
 // displays recipe to the DOM from JSON
 function displayRecipe(responseJson) {
   clear();
-  $('#search-container').show();
-  $('#search-container').prepend(`
+  $('#search-container').show().prepend(`
   <div class="img-div">
   <img class="recipe-img" src="${responseJson.drinks[0].strDrinkThumb}" 
   alt="${responseJson.drinks[0].strDrink}" /></div>
@@ -24,7 +23,7 @@ function displayMeasurements(responseJson) {
   let measurement = 'strMeasure' + a;
   let response = responseJson.drinks[0][measurement];
 
-  while (response != null) {
+  while (response !== null) {
     console.log(response);
     $('#main-measurements').append(`<li>${response}</li>`);
     measurement = 'strMeasure' + a;
@@ -39,7 +38,7 @@ function displayIngredients(responseJson) {
   let ingredient = 'strIngredient' + a;
   let response = responseJson.drinks[0][ingredient];
 
-  while (response != null) {
+  while (response !== null) {
     $('#main-ingredients').append(`<li>${response}</li>`);
     console.log(response);
     ingredient = 'strIngredient' + a;
@@ -66,7 +65,7 @@ function fetchUrl(id) {
 }
 
 // calls API to search recipe by drink ID
-function fetchRecipe(url) {
+function fetchRecipe(url, cocktail) {
   console.log('fetch recipe ' + url);
   fetch(url)
     .then(response => response.json())

@@ -20,28 +20,27 @@
     <main>
       <nav>
         <ul class="nav-menu">
-          <div class="icon"><a href="./index.html"
-            ><img class="logo-img" src="./Resource Images/Logo.svg" alt="logo"
-          /></div>
+          <span class="icon"><a href="./index.html"
+            ><img class="logo-img" src="./Resource_Images/Logo.svg" alt="logo"
+          /></span>
           <div class="logo-text"><h3>Smashing </h3>
             <h3>Cocktails</h3></div>
         </a>
+          <section class="search-box">
+            <label for="search-feature"></label>
+            <input
+            id="search-feature"
+              type="text"
+              name=""
+              class="search-txt"
+              placeholder="Type to search"
+            />
+            <a class="search-btn" id="search-btn" value="">
+              <i class="fas fa-search"></i>
+            </a>
+          </section>
         </ul>
-
-        <section class="search-box">
-          <input
-            type="text"
-            name=""
-            class="search-txt"
-            placeholder="Type to search"
-          />
-          <a class="search-btn" value="">
-            <i class="fas fa-search"></i>
-          </a>
-          
-        </section>
-
-      <p class="error-message"></p>
+        <p class="error-message"></p>
         
       </nav>
 
@@ -56,10 +55,13 @@
         <div class="directions-container">
           <p id="directions"></p>
         </div>
+        <div class="return-btn">
+          <button id="return-btn">Start Over</button>
+        </div>
       </section>
 
       <section class="pop-container">
-        <h2>Popular Cocktail List</h2>
+        <h2>Random Cocktail List</h2>
         <div class="list-group-container">
           <ul class="list-group"></ul>
         </div>
@@ -77,37 +79,37 @@
       <section class="grid-container">
         <div class="item-one item">
           <a href="#" data-liquor="Gin" class="liquor-choice"
-            ><img src="Resource Images/Gin.svg" alt="gin" 
+            ><img class="liquor-img" src="Resource_Images/Gin.svg" alt="gin" 
           /></a>
           <h3>GIN</h3>
         </div>
         <div class="item-two item">
           <a href="#" data-liquor="Rum" class="liquor-choice"
-            ><img src="Resource Images/Rum.svg" alt="rum" 
+            ><img class="liquor-img" src="Resource_Images/Rum.svg" alt="rum" 
           /></a>
           <h3>RUM</h3>
         </div>
         <div class="item-three item">
           <a href="#" data-liquor="Tequila" class="liquor-choice"
-            ><img src="Resource Images/Tequila.svg" alt="tequila" 
+            ><img class="liquor-img" src="Resource_Images/Tequila.svg" alt="tequila" 
           /></a>
           <h3>TEQUILA</h3>
         </div>
         <div class="item-four item">
           <a href="#" data-liquor="Vodka" class="liquor-choice"
-            ><img src="Resource Images/Vodka.svg" alt="vodka" 
+            ><img class="liquor-img" src="Resource_Images/Vodka.svg" alt="vodka" 
           /></a>
           <h3>VODKA</h3>
         </div>
         <div class="item-five item">
           <a href="#" data-liquor="Bourbon" class="liquor-choice"
-            ><img src="Resource Images/Bourbon.svg" alt="bourbon" 
+            ><img class="liquor-img" src="Resource_Images/Bourbon.svg" alt="bourbon" 
           /></a>
           <h3>BOURBON</h3>
         </div>
         <div class="item-six item">
           <a href="#" data-liquor="Brandy" class="liquor-choice"
-            ><img src="Resource Images/Brandy.svg" alt="brandy" 
+            ><img class="liquor-img" src="Resource_Images/Brandy.svg" alt="brandy" 
           /></a>
           <h3>BRANDY</h3>
         </div>
@@ -119,6 +121,6 @@
       crossorigin="anonymous"
     ></script>
     <script src="./main.js"></script>
-    <script src="./liquor.js"></script>
+    <script src="./recipeDisplay.js"></script>
   </body>
 </html>

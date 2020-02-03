@@ -1,3 +1,21 @@
+function reloadDom() {
+  $('#return-btn').click(event => {
+    location.reload();
+  });
+}
+
+// gives the search enter button functionality
+function enterButton() {
+  var input = document.getElementById('search-feature');
+
+  input.addEventListener('keyup', function(event) {
+    if (event.keyCode === 13) {
+      event.preventDefault();
+      document.getElementById('search-btn').click();
+    }
+  });
+}
+
 // displays list of popular cocktails
 function displayPopList(responseJson) {
   console.log(responseJson);
@@ -88,7 +106,7 @@ function searchRecipe(cocktail) {
         alert(responseJson.message);
       }
     })
-    .then(responseJson => displayLiquorList(responseJson))
+    .then(responseJson => displayLiquorList(responseJson, cocktail))
     .catch(error => {
       $('.error-message').text(`Not a recipe we recognize, try again.`);
     });
@@ -102,8 +120,9 @@ function watchSearch() {
 
     const searchTerm = $('.search-txt').val();
     console.log('search term ' + searchTerm);
-    if (searchTerm == '') {
-      $('.error-message').text('Not a cocktail we recognize, try again.');
+    if (searchTerm === '') {
+      console.log('error');
+      // $('.error-message').text('Not a cocktail we recognize, try again.');
     } else {
       searchRecipe(searchTerm);
     }
@@ -112,3 +131,5 @@ function watchSearch() {
 
 $(watchSearch);
 $(loadPopList);
+$(enterButton);
+$(reloadDom);
