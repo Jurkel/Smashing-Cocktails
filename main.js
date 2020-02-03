@@ -115,14 +115,14 @@ function searchRecipe(cocktail) {
 // waiting for search event
 function watchSearch() {
   $('.search-results').empty();
+  $('.error-message').show();
   $('.search-btn').click(event => {
     event.preventDefault();
 
     const searchTerm = $('.search-txt').val();
     console.log('search term ' + searchTerm);
     if (searchTerm === '') {
-      console.log('error');
-      // $('.error-message').text('Not a cocktail we recognize, try again.');
+      $('.error-message').text('Please enter a cocktail.');
     } else {
       searchRecipe(searchTerm);
     }
