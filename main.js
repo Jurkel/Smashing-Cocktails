@@ -18,7 +18,6 @@ function enterButton() {
 
 // displays list of popular cocktails
 function displayPopList(responseJson) {
-  console.log(responseJson);
   $('#search-container').hide();
 
   for (let i = 0; i < responseJson.drinks.length; i++) {
@@ -72,7 +71,6 @@ function clear() {
 
 // displays list filtered by alcohol
 function displayLiquorList(responseJson) {
-  console.log(responseJson);
   clear();
   $('#search-container').hide();
   $('.error-message').empty();
@@ -102,7 +100,6 @@ function searchRecipe(cocktail) {
       if (response.ok) {
         return response.json();
       } else {
-        console.log('error');
         alert(responseJson.message);
       }
     })
@@ -120,7 +117,6 @@ function watchSearch() {
     event.preventDefault();
 
     const searchTerm = $('.search-txt').val();
-    console.log('search term ' + searchTerm);
     if (searchTerm === '') {
       $('.error-message').text('Please enter a cocktail.');
     } else {

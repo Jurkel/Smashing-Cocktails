@@ -24,7 +24,6 @@ function displayMeasurements(responseJson) {
   let response = responseJson.drinks[0][measurement];
 
   while (response !== null) {
-    console.log(response);
     $('#main-measurements').append(`<li>${response}</li>`);
     measurement = 'strMeasure' + a;
     response = responseJson.drinks[0][measurement];
@@ -40,7 +39,6 @@ function displayIngredients(responseJson) {
 
   while (response !== null) {
     $('#main-ingredients').append(`<li>${response}</li>`);
-    console.log(response);
     ingredient = 'strIngredient' + a;
     response = responseJson.drinks[0][ingredient];
     a++;
@@ -51,7 +49,6 @@ function displayIngredients(responseJson) {
 function findClass() {
   $(document).on('click', '.drink-item', function() {
     let current = $(this).data('drink-id');
-    console.log('current >> ' + current);
     let url = fetchUrl(current);
     fetchRecipe(url);
   });
@@ -60,13 +57,11 @@ function findClass() {
 // compiles the endpoint for calling the API by drink ID
 function fetchUrl(id) {
   const url = 'https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=' + id;
-  console.log('url ' + url);
   return url;
 }
 
 // calls API to search recipe by drink ID
 function fetchRecipe(url, cocktail) {
-  console.log('fetch recipe ' + url);
   fetch(url)
     .then(response => response.json())
     .then(responseJson => displayRecipe(responseJson));
@@ -77,8 +72,6 @@ function pullList(liquor) {
   const url =
     'https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=' + liquor;
 
-  console.log(url);
-
   fetch(url)
     .then(response => response.json())
     .then(responseJson => displayLiquorList(responseJson));
@@ -88,7 +81,6 @@ function pullList(liquor) {
 function watchLiquor() {
   $(document).on('click', '.liquor-choice', function() {
     let current = $(this).data('liquor');
-    console.log('current >> ' + current);
     pullList(current);
   });
 }
