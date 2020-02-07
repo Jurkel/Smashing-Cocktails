@@ -22,14 +22,13 @@ function displayPopList(responseJson) {
 
   for (let i = 0; i < responseJson.drinks.length; i++) {
     $('.list-group').append(
-      `<div class="pop-list-container">
-      <li><a href="#" class="pop-item" data-drink-id="${responseJson.drinks[i].idDrink}">
+      `<li class="pop-list-container">
+      <a href="#" class="pop-item" data-drink-id="${responseJson.drinks[i].idDrink}">
       <img src="${responseJson.drinks[i].strDrinkThumb}" 
       alt="${responseJson.drinks[i].strDrink}" 
       class="pop-list-img" />
-      <div class="p-container">
-      <p>${responseJson.drinks[i].strDrink}</p></div></a></li>
-      </div>`
+      <p>${responseJson.drinks[i].strDrink}</p></a>
+      </li>`
     );
   }
   findPopClass();
@@ -39,7 +38,6 @@ function displayPopList(responseJson) {
 function findPopClass() {
   $(document).on('click', '.pop-item', function() {
     let current = $(this).data('drink-id');
-    console.log('current >> ' + current);
     let url = fetchUrl(current);
     fetchRecipe(url);
   });
@@ -125,7 +123,11 @@ function watchSearch() {
   });
 }
 
-$(watchSearch);
-$(loadPopList);
-$(enterButton);
-$(reloadDom);
+function initApp() {
+  $(watchSearch);
+  $(loadPopList);
+  $(enterButton);
+  $(reloadDom);
+}
+
+$(initApp);
