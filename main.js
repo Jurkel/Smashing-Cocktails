@@ -1,3 +1,4 @@
+// restart the DOM
 function reloadDom() {
   $('#return-btn').click(event => {
     location.reload();
@@ -5,7 +6,7 @@ function reloadDom() {
 }
 
 // gives the search enter button functionality
-function enterButton() {
+function searchEnterButton() {
   var input = document.getElementById('search-feature');
 
   input.addEventListener('keyup', function(event) {
@@ -54,7 +55,7 @@ function loadPopList() {
 }
 
 // clears DOM of search results
-function clear() {
+function clearDOM() {
   $('#search-results').empty();
   $('.pop-container').hide();
   $('.banner-text').hide();
@@ -69,7 +70,7 @@ function clear() {
 
 // displays list filtered by alcohol
 function displayLiquorList(responseJson) {
-  clear();
+  clearDOM();
   $('#search-container').hide();
   $('.error-message').empty();
 
@@ -85,7 +86,7 @@ function displayLiquorList(responseJson) {
       <h3>${responseJson.drinks[i].strDrink}</h3></li></a>`
     );
   }
-  findClass();
+  findDrinkID();
 }
 
 // calls API to search for recipe by cocktail name
@@ -126,7 +127,7 @@ function watchSearch() {
 function initApp() {
   $(watchSearch);
   $(loadPopList);
-  $(enterButton);
+  $(searchEnterButton);
   $(reloadDom);
 }
 

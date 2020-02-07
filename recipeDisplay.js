@@ -1,6 +1,6 @@
 // displays recipe to the DOM from JSON
 function displayRecipe(responseJson) {
-  clear();
+  clearDOM();
   $('#search-container').show().prepend(`
   <div class="img-div">
   <img class="recipe-img" src="${responseJson.drinks[0].strDrinkThumb}" 
@@ -46,7 +46,7 @@ function displayIngredients(responseJson) {
 }
 
 // finds the drinkID number stored in attributes
-function findClass() {
+function findDrinkID() {
   $(document).on('click', '.drink-item', function() {
     let current = $(this).data('drink-id');
     let url = fetchUrl(current);
